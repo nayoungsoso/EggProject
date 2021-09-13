@@ -1,0 +1,20 @@
+Platform Game Tileset: Abandoned Castle
+
+
+
+Tileset for make videogames, hight resolution :256×256 pixels.
+2 Backgrounds :3400×2000 pixels.
+This pack include:
+- 33 Tiles
+- 26 Items
+- 5 animated objets (chest, coin, gem,door, apple)
+Full Editable – Easy to Modify – High Resolution
+ 
+
+This file was created by Simirk.
+
+If you have any questions you can contact me francogiachetti@gmai.com
+
+If you want to change name element you just need to go to layer/group and you can change it easily.
+
+Again if you have any issues, please contact me.

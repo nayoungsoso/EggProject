@@ -1,0 +1,412 @@
+fileFormatVersion: 2
+guid: c37f37924eeb68540b9965ff3074a573
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 199249360466117110
+    second: Floor_0
+  - first:
+      213: 8586074191503405527
+    second: Floor_1
+  - first:
+      213: -4880280114624847625
+    second: Floor_2
+  - first:
+      213: -8760255559057331400
+    second: Floor_3
+  - first:
+      213: 1706119114420486083
+    second: Floor_4
+  - first:
+      213: -8800800135064143610
+    second: Floor_5
+  - first:
+      213: 5413850237332849526
+    second: Floor_6
+  - first:
+      213: -4416756212120593824
+    second: Floor_7
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Floor_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 450
+        width: 63
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 22.922112, y: -28.5}
+        - {x: -31.5, y: -28.5}
+        - {x: -31.5, y: 16.118835}
+        - {x: -14.330376, y: 15.585876}
+        - {x: 0.25865746, y: 15.458282}
+        - {x: 19.585762, y: 18.978058}
+        - {x: 26.743725, y: 23.298492}
+        - {x: 31.5, y: 20.840973}
+        - {x: 31.032505, y: -18.545715}
+        - {x: 28.537361, y: -25.347809}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f18e48dc30e3c200800000000000000
+      internalID: 199249360466117110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 448
+        width: 64
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -23.196266, y: -16.5}
+        - {x: -32, y: -11.527161}
+        - {x: -32, y: 8.054565}
+        - {x: -18.674408, y: 11.032959}
+        - {x: 0.6717148, y: 11.96933}
+        - {x: 26.50084, y: 14.70636}
+        - {x: 32, y: 13.988922}
+        - {x: 32, y: -10.686188}
+        - {x: 23.092072, y: -13.858917}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1b5b77cfcd72770800000000000000
+      internalID: 8586074191503405527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor_2
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 448
+        width: 64
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 17.019882, y: -28.5}
+        - {x: -12.210205, y: -25.078491}
+        - {x: -22.448105, y: -21.912903}
+        - {x: -31.38855, y: -12.41983}
+        - {x: -32, y: 0.81484985}
+        - {x: -18.745407, y: 5.5862427}
+        - {x: -8.637161, y: 8.758118}
+        - {x: 6.060684, y: 12.0346985}
+        - {x: 18.012985, y: 14.35437}
+        - {x: 23.289429, y: 17.917572}
+        - {x: 27.692871, y: 17.36792}
+        - {x: 32, y: 6.753723}
+        - {x: 32, y: -4.3918457}
+        - {x: 25.441803, y: -20.119263}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f02263b713c54cb0800000000000000
+      internalID: -4880280114624847625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 448
+        width: 64
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -24.169708, y: -14.466949}
+        - {x: -32, y: -2.1224365}
+        - {x: -21.12053, y: 17.997742}
+        - {x: 18.87738, y: 19.612}
+        - {x: 32, y: 2.2584534}
+        - {x: 32, y: -7.0551147}
+        - {x: 4.169647, y: -25}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b2fbc9bf15d6680800000000000000
+      internalID: -8760255559057331400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor_4
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 452
+        width: 64
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 19.902466, y: -27}
+        - {x: -17.534363, y: -27}
+        - {x: -25.768341, y: -17.74295}
+        - {x: -32, y: -8.4496155}
+        - {x: -32, y: 6.9928284}
+        - {x: -27.635742, y: 14.150085}
+        - {x: -7.2834473, y: 13.0937195}
+        - {x: 4.64505, y: 17.228027}
+        - {x: 13.797058, y: 25.808685}
+        - {x: 22.812561, y: 18.517395}
+        - {x: 29.877869, y: 6.293335}
+        - {x: 31.825775, y: -0.50177}
+        - {x: 32, y: -19.390747}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf798f8b4a5da710800000000000000
+      internalID: 1706119114420486083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor_5
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 446
+        width: 30
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -9.992493, y: -31}
+        - {x: -10.445068, y: -22.74118}
+        - {x: -12.096771, y: -21.057312}
+        - {x: -11.970154, y: -1.25}
+        - {x: -8.999817, y: 1.3334656}
+        - {x: -8.936401, y: 3.907013}
+        - {x: -9.03952, y: 7.982727}
+        - {x: -10.19809, y: 8.1918335}
+        - {x: -10.105103, y: 13.02475}
+        - {x: -9.076324, y: 13.073486}
+        - {x: -8.892609, y: 15.862335}
+        - {x: -11.988159, y: 16.373138}
+        - {x: -15, y: 18.078491}
+        - {x: -15, y: 19.941315}
+        - {x: -11.393982, y: 22.222778}
+        - {x: -7.081024, y: 23.002686}
+        - {x: -6.6384277, y: 25.280457}
+        - {x: -3.8010864, y: 29.473022}
+        - {x: 0.64630127, y: 31}
+        - {x: 4.8584595, y: 30.028107}
+        - {x: 8.578827, y: 26.73059}
+        - {x: 10.493805, y: 22.438782}
+        - {x: 13.138306, y: 21.906921}
+        - {x: 14.876465, y: 20.287506}
+        - {x: 15, y: 18.774017}
+        - {x: 11.334198, y: 16.784973}
+        - {x: 11.0911255, y: 13.321869}
+        - {x: 12.050995, y: 12.653503}
+        - {x: 11.99115, y: 8.468231}
+        - {x: 10.412903, y: 7.548584}
+        - {x: 10.473907, y: 3.866333}
+        - {x: 11.996185, y: 2.676117}
+        - {x: 12.022461, y: -11.7716675}
+        - {x: 9.974335, y: -12.515808}
+        - {x: 10.461212, y: -31}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 609ba42e7e64dd580800000000000000
+      internalID: -8800800135064143610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 402
+        width: 64
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67383676b1cd12b40800000000000000
+      internalID: 5413850237332849526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor_7
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 402
+        width: 64
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32, y: -12}
+        - {x: -32, y: 12}
+        - {x: 32, y: 12}
+        - {x: 32, y: -11.45224}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a5d0540a784b2c0800000000000000
+      internalID: -4416756212120593824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
