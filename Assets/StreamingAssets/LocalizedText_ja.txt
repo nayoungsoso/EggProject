@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "key": "StartGame",
+      "value": "ゲームスタート"
+    },
+    {
+      "key": "CheckRecord",
+      "value": "ランク"
+    },
+    {
+      "key": "SetOption",
+      "value": "システム設定"
+    },
+    {
+      "key": "QuitGame",
+      "value": "ゲーム終了"
+    }
+  ]
+}

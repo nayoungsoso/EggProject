@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ScoreShadow : MonoBehaviour
 {
@@ -18,6 +19,6 @@ public class ScoreShadow : MonoBehaviour
 	void Update ()
 	{
 		// Set the text to equal the copy's text.
-		GetComponent<GUIText>().text = guiCopy.GetComponent<GUIText>().text;
+		GetComponent<Text>().text = guiCopy.GetComponent<Text>().text;
 	}
 }
