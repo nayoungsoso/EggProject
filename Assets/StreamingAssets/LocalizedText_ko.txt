@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "key": "StartGame",
+      "value": "게임시작"
+    },
+    {
+      "key": "CheckRecord",
+      "value": "기록확인"
+    },
+    {
+      "key": "SetOption",
+      "value": "환경설정"
+    },
+    {
+      "key": "QuitGame",
+      "value": "게임종료"
+    }
+  ]
+}

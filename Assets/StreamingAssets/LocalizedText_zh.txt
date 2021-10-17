@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "key": "StartGame",
+      "value": "游戏开始"
+    },
+    {
+      "key": "CheckRecord",
+      "value": "记录确认"
+    },
+    {
+      "key": "SetOption",
+      "value": "配置环境"
+    },
+    {
+      "key": "QuitGame",
+      "value": "游戏结束"
+    }
+  ]
+}

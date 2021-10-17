@@ -1,0 +1,20 @@
+﻿{
+  "items": [
+    {
+      "key": "StartGame",
+      "value": "Start"
+    },
+    {
+      "key": "CheckRecord",
+      "value": "Records"
+    },
+    {
+      "key": "SetOption",
+      "value": "Settings"
+    },
+    {
+      "key": "QuitGame",
+      "value": "Quit"
+    }
+  ]
+}
