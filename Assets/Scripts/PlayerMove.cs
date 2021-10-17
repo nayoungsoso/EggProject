@@ -16,9 +16,19 @@ public class PlayerMove : MonoBehaviour
     int hp = 100;
     int maxHp = 100;
 
+    public AudioClip jumpSound;
+    public AudioClip riseSound;
+    public AudioClip breakSound;
+    public AudioClip[] hitSound = new AudioClip[2];
+    public AudioClip deadSound;
+    public AudioClip flapSound;
+    public AudioClip webSound;
+    public AudioClip burnSound;
+
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anim;
+    AudioSource audioSource;
 
     float timer = 0;
 
@@ -28,6 +38,7 @@ public class PlayerMove : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -83,6 +94,14 @@ public class PlayerMove : MonoBehaviour
         }
 
     }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Fire") // 게임오브젝트랑 충돌한 태그가 Fire일 때
+        {
+            audioSource.Stop();
+        }
+
+    }
 
     void OnCollisionStay2D(Collision2D collision)
     {
@@ -129,6 +148,7 @@ public class PlayerMove : MonoBehaviour
                     h = rotateDegree * 0.1f;
                 }
                 // 이동
+                //PlaySound("JUMP");
                 rigid.AddForce(Vector2.right * h * jumpPower, ForceMode2D.Impulse);
                 rigid.AddForce(Vector2.up * jump * jumpPower, ForceMode2D.Impulse);
                 jumpPower = 0;
@@ -142,11 +162,20 @@ public class PlayerMove : MonoBehaviour
         if (!die)
         {
             if (collision.gameObject.tag == "Fire") // 게임오브젝트랑 충돌한 태그가 Fire일 때
+            {
+                PlaySound("BURN");
                 Burning(collision.transform.position);
+            }
             if (collision.gameObject.tag == "Tornado") // 게임오브젝트랑 충돌한 태그가 Storm일 때
+            {
+                PlaySound("RISE");
                 FlyAway(collision.transform.position);
+            }
             if (collision.gameObject.tag == "Web") // 게임오브젝트랑 충돌한 태그가 Web일 때
+            {
+                PlaySound("WEB");
                 Web(collision.transform.position);
+            }
         }
 
     }
@@ -157,7 +186,6 @@ public class PlayerMove : MonoBehaviour
         // 5초 지속시 사망
         if (timer > 5)
         {
-            print("burn");
             burn = true;
             GameManager.instance.OnDamage(100);
             hp = 0;
@@ -177,22 +205,27 @@ public class PlayerMove : MonoBehaviour
         if (!die)
         {
             if (collision.gameObject.tag == "Trap") // 게임오브젝트랑 충돌한 태그가 Trap일 때
+            {
+                PlaySound("BREAK");
                 OnTrapDamaged(collision.transform.position);
-            if (collision.gameObject.tag == "Flatform" || collision.gameObject.tag == "Ice") // 게임 오브젝트랑 충돌한 태그가 Flatform일 때
+            }
+            if (collision.gameObject.tag == "Platform") // 게임 오브젝트랑 충돌한 태그가 Flatform일 때
             {
                 // 속도에 따른 충돌 데미지
-                print(rigid.velocity.magnitude);
-                if (rigid.velocity.magnitude > 1f)
+                if (rigid.velocity.magnitude > 3.4f)
                 {
-                    OnHitDamaged(10);
-                }
-                else if (rigid.velocity.magnitude > 0.7f)
-                {
+                    PlaySound("HIT");
                     OnHitDamaged(7);
                 }
-                else if (rigid.velocity.magnitude > 0.4f)
+                else if (rigid.velocity.magnitude > 2.4f)
                 {
-                    OnHitDamaged(4);
+                    PlaySound("HIT");
+                    OnHitDamaged(6);
+                }
+                else if (rigid.velocity.magnitude > 1.4f)
+                {
+                    PlaySound("HIT");
+                    OnHitDamaged(5);
                 }
             }
             else
@@ -223,6 +256,8 @@ public class PlayerMove : MonoBehaviour
     {
         gameObject.layer = 11; // 플레이어의 레이어가 11번레이어로 변경됨
 
+        
+
         //토네이도를 밟을 때
         float ranx = Random.Range(-0.1f, 0.1f);
         float rany = Random.Range(0.1f, 0.5f);
@@ -246,14 +281,14 @@ public class PlayerMove : MonoBehaviour
     void Web(Vector2 targetPos)
     {
         //거미줄에 튕김
-        int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
-        rigid.AddForce(new Vector2(dirc, 1) * 2, ForceMode2D.Impulse);
+        int dirc = transform.position.x - targetPos.x > 0 ? -1 : 1;
+        rigid.AddForce(new Vector2(dirc, 1) * 1, ForceMode2D.Impulse);
 
     }
 
     public void OnDie()
     {
-        print("die");
+        PlaySound("DEAD");
         gameObject.SetActive(false);
         die = true;
         burn = false;
@@ -263,11 +298,46 @@ public class PlayerMove : MonoBehaviour
     {
         if (parable)
         {
+            PlaySound("FLAP");
             rigid.gravityScale -= Time.deltaTime * 0.5f;
         }
         else
         {
             rigid.gravityScale = 1;
         }
+    }
+    
+    void PlaySound(string action)
+    {
+        switch (action)
+        {
+            case "JUMP":
+                audioSource.clip = jumpSound;
+                break;
+            case "RISE":
+                audioSource.clip = riseSound;
+                break;
+            case "FLAP":
+                audioSource.clip = flapSound;
+                break;
+            case "BURN":
+                audioSource.clip = burnSound;
+                break;
+            case "DEAD":
+                audioSource.clip = deadSound;
+                break;
+            case "WEB":
+                audioSource.clip = webSound;
+                break;
+            case "BREAK":
+                audioSource.clip = breakSound;
+                break;
+            case "HIT":
+                int i = Random.Range(0, 3);
+                audioSource.clip = hitSound[i];
+                break;
+        }
+        audioSource.Play();
+
     }
 }
