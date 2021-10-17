@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject player;
     public static GameManager instance;
     public Slider hpSlider; // 체력바 슬라이더
 
@@ -12,7 +13,12 @@ public class GameManager : MonoBehaviour
 
     public float startHp = 100;
     public float hp;
-    public PlayerMove playerMove;
+
+    GameObject deadPoint;
+    Vector3 deadPosition;
+    public GameObject deadEgg;
+    public GameObject burnEgg;
+    public Transform deadRoot;
 
     private void Awake()
     {
@@ -41,6 +47,18 @@ public class GameManager : MonoBehaviour
         }
         if (hp < 1)
         {
+            deadPosition = player.transform.localPosition;
+            deadPosition.y += -0.1f;
+            if (GameObject.Find("Player").GetComponent<PlayerMove>().burn)
+            {
+                deadPoint = Instantiate(burnEgg, deadRoot);
+            }
+            else
+            {
+                deadPoint = Instantiate(deadEgg, deadRoot);
+            }
+            deadPoint.transform.position = deadPosition;
+            
             GameObject.Find("Player").GetComponent<PlayerMove>().OnDie();
         }
     }

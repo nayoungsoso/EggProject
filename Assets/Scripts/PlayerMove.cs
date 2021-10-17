@@ -7,12 +7,15 @@ public class PlayerMove : MonoBehaviour
 {
     public Text timeText;
     public float speed;
+    public bool burn = false;
+
     float time;
     float h,jump,jumpPower=0;
     bool parable = false;
     bool die = false;
     int hp = 100;
     int maxHp = 100;
+
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anim;
@@ -153,7 +156,8 @@ public class PlayerMove : MonoBehaviour
         if (timer > 5)
         {
             print("burn");
-            OnDie();
+            burn = true;
+            GameManager.instance.OnDamage(100);
             hp = 0;
             timer = 0;
         }
@@ -172,8 +176,9 @@ public class PlayerMove : MonoBehaviour
         {
             if (collision.gameObject.tag == "Trap") // 게임오브젝트랑 충돌한 태그가 Trap일 때
                 OnTrapDamaged(collision.transform.position);
-            if (collision.gameObject.tag == "Flatform") // 게임 오브젝트랑 충돌한 태그가 Flatform일 때
+            if (collision.gameObject.tag == "Flatform" || collision.gameObject.tag == "Ice") // 게임 오브젝트랑 충돌한 태그가 Flatform일 때
             {
+                // 속도에 따른 충돌 데미지
                 print(rigid.velocity.magnitude);
                 if (rigid.velocity.magnitude > 1f)
                 {
@@ -219,8 +224,8 @@ public class PlayerMove : MonoBehaviour
         gameObject.layer = 11; // 플레이어의 레이어가 11번레이어로 변경됨
 
         //토네이도를 밟을 때
-        int ranx = Random.Range(-1, 1);
-        int rany = Random.Range(1, 3);
+        float ranx = Random.Range(-0.1f, 0.1f);
+        float rany = Random.Range(0.1f, 1.0f);
         rigid.AddForce(new Vector2(ranx, rany), ForceMode2D.Impulse);
 
     }
@@ -248,8 +253,10 @@ public class PlayerMove : MonoBehaviour
 
     public void OnDie()
     {
+        print("die");
+        gameObject.SetActive(false);
         die = true;
-        spriteRenderer.color = new Color(1, 1, 1, 0.4f);
+        burn = false;
     }
 
     void para()
