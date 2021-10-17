@@ -145,6 +145,8 @@ public class PlayerMove : MonoBehaviour
                 Burning(collision.transform.position);
             if (collision.gameObject.tag == "Tornado") // 게임오브젝트랑 충돌한 태그가 Storm일 때
                 FlyAway(collision.transform.position);
+            if (collision.gameObject.tag == "Web") // 게임오브젝트랑 충돌한 태그가 Web일 때
+                Web(collision.transform.position);
         }
 
     }
@@ -165,7 +167,7 @@ public class PlayerMove : MonoBehaviour
         gameObject.layer = 11; // 플레이어의 레이어가 11번레이어로 변경됨
 
 
-        spriteRenderer.color = new Color(1, 1, 1, 0.4f); // 뜨거울 때 투명도조절
+        spriteRenderer.color = new Color(1, 0, 0, 0.4f); // 뜨거울 때 투명도조절
 
     }
 
@@ -193,8 +195,6 @@ public class PlayerMove : MonoBehaviour
                     OnHitDamaged(4);
                 }
             }
-            if (collision.gameObject.tag == "Web") // 게임오브젝트랑 충돌한 태그가 Web일 때
-                Web(collision.transform.position);
             else
             {
                 Invoke("OffDamaged", 1);
@@ -212,7 +212,7 @@ public class PlayerMove : MonoBehaviour
 
         //가시 밟을 때
         int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
-        rigid.AddForce(new Vector2(dirc, 1) * 3, ForceMode2D.Impulse);
+        rigid.AddForce(new Vector2(dirc, 1) * 2, ForceMode2D.Impulse);
 
         Invoke("OffDamaged", 1);// 무적시간
 
@@ -225,7 +225,7 @@ public class PlayerMove : MonoBehaviour
 
         //토네이도를 밟을 때
         float ranx = Random.Range(-0.1f, 0.1f);
-        float rany = Random.Range(0.1f, 1.0f);
+        float rany = Random.Range(0.1f, 0.5f);
         rigid.AddForce(new Vector2(ranx, rany), ForceMode2D.Impulse);
 
     }
@@ -247,7 +247,7 @@ public class PlayerMove : MonoBehaviour
     {
         //거미줄에 튕김
         int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
-        rigid.AddForce(new Vector2(dirc, 1) * 3, ForceMode2D.Impulse);
+        rigid.AddForce(new Vector2(dirc, 1) * 2, ForceMode2D.Impulse);
 
     }
 

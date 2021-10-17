@@ -6,8 +6,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameObject player;
+    public Sprite crack1;
+    public Sprite crack2;
     public static GameManager instance;
     public Slider hpSlider; // 체력바 슬라이더
+    SpriteRenderer spriteRenderer;
 
     public AudioClip hitClip; // 피격 소리
 
@@ -23,6 +26,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        spriteRenderer = player.GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -44,6 +48,14 @@ public class GameManager : MonoBehaviour
         if (hp > 0)
         {
             hp -= damage;
+        }
+        if (hp < 50)
+        {
+            spriteRenderer.sprite = crack1;
+        }
+        else if (hp < 10)
+        {
+            spriteRenderer.sprite = crack2;
         }
         if (hp < 1)
         {
