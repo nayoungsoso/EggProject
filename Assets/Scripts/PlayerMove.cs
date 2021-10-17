@@ -32,7 +32,6 @@ public class PlayerMove : MonoBehaviour
 
     float timer = 0;
 
-    // Start is called before the first frame update
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -41,7 +40,6 @@ public class PlayerMove : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!die)
@@ -92,8 +90,13 @@ public class PlayerMove : MonoBehaviour
                 time -= Time.deltaTime;
             }
         }
-
     }
+
+    private void FixedUpdate()
+    {
+        
+    }
+
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Fire") // 게임오브젝트랑 충돌한 태그가 Fire일 때
