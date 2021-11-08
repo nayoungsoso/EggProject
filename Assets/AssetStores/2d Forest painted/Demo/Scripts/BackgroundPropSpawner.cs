@@ -11,9 +11,10 @@ public class BackgroundPropSpawner : MonoBehaviour
 	public float minTimeBetweenSpawns;		// The shortest possible time between spawns.
 	public float maxTimeBetweenSpawns;		// The longest possible time between spawns.
 	public float minSpeed;					// The lowest possible speed of the prop.
-	public float maxSpeed;					// The highest possible speeed of the prop.
+	public float maxSpeed;                  // The highest possible speeed of the prop.
 
-	void Start ()
+    [System.Obsolete]
+    void Start ()
 	{
 		// Set the random seed so it's not the same each game.
 		Random.seed = System.DateTime.Today.Millisecond;

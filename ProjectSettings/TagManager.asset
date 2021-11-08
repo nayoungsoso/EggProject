@@ -4,12 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Trap
-  - Parachute
-  - Platform
   - Web
-  - Fire
   - Tornado
+  - Spike
+  - Fire
+  - Water
+  - Lava
   layers:
   - Default
   - TransparentFX
@@ -19,10 +19,10 @@ TagManager:
   - UI
   - 
   - 
-  - Trap
-  - Platform
-  - Player
-  - PlayerDamaged
+  - Ground
+  - 
+  - 
+  - 
   - 
   - 
   - 
