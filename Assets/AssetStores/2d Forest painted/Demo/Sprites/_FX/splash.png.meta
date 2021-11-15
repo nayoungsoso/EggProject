@@ -3,19 +3,19 @@ guid: e5e275498558a2542bb0465fa5e30d9b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 21300000
+      213: -8030570891474961867
     second: splash_0
   - first:
-      213: 21300002
+      213: 1767052143248010154
     second: splash_1
   - first:
-      213: 21300004
+      213: -8099681393961307966
     second: splash_2
   - first:
-      213: 21300006
+      213: -4204823964935281337
     second: splash_3
   - first:
-      213: 21300008
+      213: -6314380599349719348
     second: splash_4
   externalObjects: {}
   serializedVersion: 11
@@ -104,8 +104,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 02305410000000000800000000000000
-      internalID: 21300000
+      spriteID: 53afa0e625ead8090800000000000000
+      internalID: -8030570891474961867
       vertices: []
       indices: 
       edges: []
@@ -125,8 +125,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22305410000000000800000000000000
-      internalID: 21300002
+      spriteID: aabe3e1ef84d58810800000000000000
+      internalID: 1767052143248010154
       vertices: []
       indices: 
       edges: []
@@ -146,8 +146,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 42305410000000000800000000000000
-      internalID: 21300004
+      spriteID: 2c07817afa6289f80800000000000000
+      internalID: -8099681393961307966
       vertices: []
       indices: 
       edges: []
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 62305410000000000800000000000000
-      internalID: 21300006
+      spriteID: 745abfac1e675a5c0800000000000000
+      internalID: -4204823964935281337
       vertices: []
       indices: 
       edges: []
@@ -188,8 +188,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 82305410000000000800000000000000
-      internalID: 21300008
+      spriteID: cce4427cc40de58a0800000000000000
+      internalID: -6314380599349719348
       vertices: []
       indices: 
       edges: []

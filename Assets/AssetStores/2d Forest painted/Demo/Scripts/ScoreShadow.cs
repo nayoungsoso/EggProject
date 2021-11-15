@@ -18,7 +18,7 @@ public class ScoreShadow : MonoBehaviour
 
 	void Update ()
 	{
-		// Set the text to equal the copy's text.
-		GetComponent<Text>().text = guiCopy.GetComponent<Text>().text;
+        // Set the text to equal the copy's text.
+        //Text.text = guiCopy.Text.text;
 	}
 }
