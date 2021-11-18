@@ -27,7 +27,8 @@ public class Enemy : MonoBehaviour
 		score = GameObject.Find("Score").GetComponent<Score>();
 	}
 
-	void FixedUpdate ()
+    [System.Obsolete]
+    void FixedUpdate ()
 	{
 		// Create an array of all the colliders in front of the enemy.
 		Collider2D[] frontHits = Physics2D.OverlapPointAll(frontCheck.position, 1);
@@ -63,8 +64,9 @@ public class Enemy : MonoBehaviour
 		// Reduce the number of hit points by one.
 		HP--;
 	}
-	
-	void Death()
+
+    [System.Obsolete]
+    void Death()
 	{
 		// Find all of the sprite renderers on this object and it's children.
 		SpriteRenderer[] otherRenderers = GetComponentsInChildren<SpriteRenderer>();

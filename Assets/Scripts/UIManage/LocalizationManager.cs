@@ -11,7 +11,6 @@ public class LocalizationManager : MonoBehaviour
 
     void Awake()
     {
-
         // singleton pattern
         if (instance == null)
         {

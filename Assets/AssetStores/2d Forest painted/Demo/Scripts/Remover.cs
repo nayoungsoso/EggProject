@@ -37,7 +37,8 @@ public class Remover : MonoBehaviour
 		}
 	}
 
-	IEnumerator ReloadGame()
+    [System.Obsolete]
+    IEnumerator ReloadGame()
 	{			
 		// ... pause briefly
 		yield return new WaitForSeconds(2);
