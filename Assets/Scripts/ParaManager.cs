@@ -18,7 +18,7 @@ public class ParaManager : MonoBehaviour
     {
         transform.position = Player.transform.position + new Vector3(PositionX, PositionY, PositionZ);
 
-        if (PlayerFSM.IsParachute)
+        if (PlayerFSM.Parachute)
             transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         else
             transform.localScale = new Vector3(0.0f, 0.0f, 0.0f);

@@ -16,22 +16,22 @@ public class PlayerFSM : MonoBehaviour
     public State state;
 
 
-    float MoveSpeed = 10.0f; // 캐릭터의 이동 속도
+    float MoveSpeed = 8.0f; // 캐릭터의 이동 속도
     float MaxSpeed = 100.0f; // 캐릭터의 최대 이동 속도
     float JumpPower = 20.0f; // 캐릭터의 점프력
     float JumpCharge = 0.0f; // 캐릭터의 점프를 위해 힘을 충전한 시간
-    float ParaPower = 16.0f; // 낙하산에 적용할 바람의 힘
+    float ParaGlide = 16.0f; // 낙하산에 적용할 낙하산의 힘
+    float ParaWind = 24.0f; // 낙하산에 적용할 바람의 힘
+    float ParaTime = 0.0f; // 낙하산이 바람을 받기까지 걸리는 시간을 저장할 타이머
     public static bool IsGrounded = true; // 캐릭터의 지면과의 접촉 상태
-    public static bool IsParachute = false; // 캐릭터의 낙하산 상태
+    public static bool Parachute = false; // 캐릭터의 낙하산 상태
+    public static bool IsDead = false; // 캐릭터의 사망 상태
     Rigidbody2D rigid;
-    Animator anim;
 
     private void Start()
     {
         state = State.Earth; // 머신의 시작 상태 (Earth)
-
-        rigid = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody2D>(); // Rigidbody2D 컴포넌트 연결
     }
 
     void Update()
@@ -114,7 +114,11 @@ public class PlayerFSM : MonoBehaviour
             state = State.Sky;
         }
         if (PlayerInteract.CurrentHealth <= 0)
+        {
+            JumpCharge = 0.0f;
             state = State.Die;
+            IsDead = true;
+        }
     }
 
     // 공중 상태 정의
@@ -127,29 +131,44 @@ public class PlayerFSM : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
             state = State.Para;
         if (PlayerInteract.CurrentHealth <= 0)
+        {
             state = State.Die;
+            IsDead = true;
+        }
     }
 
     // 낙하산 상태 정의
     private void Para()
     {
         // Para (상태 정의)
-        IsParachute = true;
-        rigid.AddForce(new Vector2(0.0f, ParaPower));
+        Parachute = true;
+        ParaTime += Time.deltaTime;
+
+        if (ParaTime < 5.0f)
+            rigid.AddForce(new Vector2(0.0f, ParaGlide));
+        else
+            rigid.AddForce(new Vector2(0.0f, ParaWind));
 
         // Para Escape Trigger (탈출 조건 정의)
         if (IsGrounded)
         {
-            IsParachute = false;
+            Parachute = false;
+            ParaTime = 0.0f;
             state = State.Earth;
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
-            IsParachute = false;
+            Parachute = false;
+            ParaTime = 0.0f;
             state = State.Sky;
         }
         if (PlayerInteract.CurrentHealth <= 0)
+        {
+            Parachute = false;
+            ParaTime = 0.0f;
             state = State.Die;
+            IsDead = true;
+        }
     }
 
     // 사망 상태 정의
@@ -157,6 +176,8 @@ public class PlayerFSM : MonoBehaviour
     {
         // Die (상태 정의)
         // Die Escape Trigger (탈출 조건 정의)
+        if (!IsDead)
+            state = State.Earth;
     }
     // } 상태 정의
 }

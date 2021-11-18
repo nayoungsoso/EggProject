@@ -10,6 +10,8 @@ TagManager:
   - Fire
   - Water
   - Lava
+  - Goal
+  - DeathZone
   layers:
   - Default
   - TransparentFX
