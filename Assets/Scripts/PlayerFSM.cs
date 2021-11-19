@@ -16,12 +16,12 @@ public class PlayerFSM : MonoBehaviour
     public State state;
 
 
-    float MoveSpeed = 8.0f; // 캐릭터의 이동 속도
+    float MoveSpeed = 16.0f; // 캐릭터의 이동 속도
     float MaxSpeed = 100.0f; // 캐릭터의 최대 이동 속도
     float JumpPower = 20.0f; // 캐릭터의 점프력
     float JumpCharge = 0.0f; // 캐릭터의 점프를 위해 힘을 충전한 시간
-    float ParaGlide = 16.0f; // 낙하산에 적용할 낙하산의 힘
-    float ParaWind = 24.0f; // 낙하산에 적용할 바람의 힘
+    float ParaGlide = 24.0f; // 낙하산에 적용할 낙하산의 힘
+    float ParaWind = 64.0f; // 낙하산에 적용할 바람의 힘
     float ParaTime = 0.0f; // 낙하산이 바람을 받기까지 걸리는 시간을 저장할 타이머
     public static bool IsGrounded = true; // 캐릭터의 지면과의 접촉 상태
     public static bool Parachute = false; // 캐릭터의 낙하산 상태
@@ -144,7 +144,7 @@ public class PlayerFSM : MonoBehaviour
         Parachute = true;
         ParaTime += Time.deltaTime;
 
-        if (ParaTime < 5.0f)
+        if (ParaTime < 3.0f)
             rigid.AddForce(new Vector2(0.0f, ParaGlide));
         else
             rigid.AddForce(new Vector2(0.0f, ParaWind));
