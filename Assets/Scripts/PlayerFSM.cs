@@ -26,7 +26,7 @@ public class PlayerFSM : MonoBehaviour
     public static bool IsGrounded = true; // 캐릭터의 지면과의 접촉 상태
     public static bool Parachute = false; // 캐릭터의 낙하산 상태
     public static bool IsDead = false; // 캐릭터의 사망 상태
-    Rigidbody2D rigid;
+    public static Rigidbody2D rigid;
 
     private void Start()
     {

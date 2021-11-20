@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class IngameUI : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class IngameUI : MonoBehaviour
             ClearMsg.SetActive(true); // 게임 클리어 메시지 출력
     }
 
+    // 캐릭터 리스폰
     public void Respawn()
     {
         lap = 0.0f;
@@ -50,5 +52,11 @@ public class IngameUI : MonoBehaviour
         PlayerFSM.IsDead = false;
         Player.transform.position = SpawnPoint.transform.position;
         GameOverMsg.SetActive(false);
+    }
+
+    // 게임 재시작
+    public void GameRestart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

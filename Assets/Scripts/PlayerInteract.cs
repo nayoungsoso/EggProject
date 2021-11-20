@@ -106,8 +106,8 @@ public class PlayerInteract : MonoBehaviour
             if (crashPower > 50.0f) // 캐릭터와 지형이 50.0 이상의 속도로 충돌했을 경우
             {
                 // Debug.Log(crashPower);
-                // 충돌속도의 20분의 1 데미지
-                StartCoroutine(Damaged(crashPower / 20.0f, 0.0f, collision.collider));
+                // 충돌속도(50 ~ 100)의 10분의 1 데미지(5 ~ 10)
+                StartCoroutine(Damaged(crashPower / 10.0f, 0.0f, collision.collider));
             }
         }
     }
