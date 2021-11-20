@@ -16,7 +16,7 @@ public class PlayerFSM : MonoBehaviour
     public State state;
 
 
-    float MoveSpeed = 16.0f; // 캐릭터의 이동 속도
+    float MoveSpeed = 24.0f; // 캐릭터의 이동 속도
     float MaxSpeed = 100.0f; // 캐릭터의 최대 이동 속도
     float JumpPower = 20.0f; // 캐릭터의 점프력
     float JumpCharge = 0.0f; // 캐릭터의 점프를 위해 힘을 충전한 시간

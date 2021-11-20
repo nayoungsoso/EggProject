@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelectStage.unity
     guid: 2dd7968bd2bec164f9936338be609d7e
+  - enabled: 1
+    path: Assets/Scenes/Stage_Mountain.unity
+    guid: 661ad421cc6d37b4797aba6ccb48853d
   m_configObjects: {}
