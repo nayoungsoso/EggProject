@@ -848,7 +848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentType: 1
-  panel: {fileID: 0}
+  panel: {fileID: 7447276915882386575}
   sceneName: 
 --- !u!1 &6025204515563164089
 GameObject:
