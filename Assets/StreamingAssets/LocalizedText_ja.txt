@@ -1,20 +1,108 @@
 {
   "items": [
     {
-      "key": "StartGame",
+      "key": "Start",
       "value": "ゲームスタート"
     },
     {
-      "key": "CheckRecord",
-      "value": "ランク"
+      "key": "Developer",
+      "value": "開発者"
     },
     {
-      "key": "SetOption",
-      "value": "システム設定"
+      "key": "Settings",
+      "value": "コンフィグ"
     },
     {
-      "key": "QuitGame",
+      "key": "Quit",
       "value": "ゲーム終了"
+    },
+    {
+      "key": "Back",
+      "value": "もどる"
+    },
+    {
+      "key": "Audio",
+      "value": "音響"
+    },
+    {
+      "key": "BGM",
+      "value": "BGM(ビージーエム)"
+    },
+    {
+      "key": "SE",
+      "value": "効果音"
+    },
+    {
+      "key": "Video",
+      "value": "画面"
+    },
+    {
+      "key": "Resolutions",
+      "value": "解像度"
+    },
+    {
+      "key": "FullScreen",
+      "value": "フルスクリーン"
+    },
+    {
+      "key": "Language",
+      "value": "言語選択"
+    },
+    {
+      "key": "QuitMessage",
+      "value": "本当にゲームを終了しますか。"
+    },
+    {
+      "key": "Stages",
+      "value": "ステージ"
+    },
+    {
+      "key": "Forest",
+      "value": "森(もり)"
+    },
+    {
+      "key": "Desert",
+      "value": "砂漠(さばく)"
+    },
+    {
+      "key": "Move",
+      "value": "移動(いどう)"
+    },
+    {
+      "key": "Parachute",
+      "value": "パラシュート"
+    },
+    {
+      "key": "Jump",
+      "value": "パラシュート"
+    },
+    {
+      "key": "Record",
+      "value": "記録"
+    },
+    {
+      "key": "Menu",
+      "value": "メニュー"
+    },
+    {
+      "key": "Continue",
+      "value": "ゲームを続ける"
+    },
+    {
+      "key": "Retry",
+      "value": "リトライ"
+    },
+    {
+      "key": "MainMenu",
+      "value": "メインメニュ"
+    },
+    {
+      "key": "RetryMessage",
+      "value": "やり直しますか。"
+    },
+    {
+      "key": "CongratsMessage",
+      "value": "おめでとうございます!"
     }
   ]
 }

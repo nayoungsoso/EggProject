@@ -1,20 +1,108 @@
 {
   "items": [
     {
-      "key": "StartGame",
+      "key": "Start",
       "value": "게임시작"
     },
     {
-      "key": "CheckRecord",
-      "value": "기록확인"
+      "key": "Developer",
+      "value": "개발자들"
     },
     {
-      "key": "SetOption",
+      "key": "Settings",
       "value": "환경설정"
     },
     {
-      "key": "QuitGame",
+      "key": "Quit",
       "value": "게임종료"
+    },
+    {
+      "key": "Back",
+      "value": "뒤로가기"
+    },
+    {
+      "key": "Audio",
+      "value": "음향"
+    },
+    {
+      "key": "BGM",
+      "value": "배경음"
+    },
+    {
+      "key": "SE",
+      "value": "효과음"
+    },
+    {
+      "key": "Video",
+      "value": "화면"
+    },
+    {
+      "key": "Resolutions",
+      "value": "해상도"
+    },
+    {
+      "key": "FullScreen",
+      "value": "전체화면"
+    },
+    {
+      "key": "Language",
+      "value": "언어선택"
+    },
+    {
+      "key": "QuitMessage",
+      "value": "정말로 게임을 종료하시겠어요?"
+    },
+    {
+      "key": "Stages",
+      "value": "스테이지 선택"
+    },
+    {
+      "key": "Forest",
+      "value": "숲(Forest)"
+    },
+    {
+      "key": "Desert",
+      "value": "사막(Desert)"
+    },
+    {
+      "key": "Move",
+      "value": "이동"
+    },
+    {
+      "key": "Parachute",
+      "value": "낙하산"
+    },
+    {
+      "key": "Jump",
+      "value": "점프"
+    },
+    {
+      "key": "Record",
+      "value": "기록"
+    },
+    {
+      "key": "Menu",
+      "value": "메뉴"
+    },
+    {
+      "key": "Continue",
+      "value": "계속하기"
+    },
+    {
+      "key": "Retry",
+      "value": "다시하기"
+    },
+    {
+      "key": "MainMenu",
+      "value": "메인메뉴"
+    },
+    {
+      "key": "RetryMessage",
+      "value": "다시 하시겠습니까?"
+    },
+    {
+      "key": "CongratsMessage",
+      "value": "축하합니다!"
     }
   ]
 }

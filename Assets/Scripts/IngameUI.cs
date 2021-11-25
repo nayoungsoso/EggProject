@@ -49,8 +49,10 @@ public class IngameUI : MonoBehaviour
         lap = 0.0f;
         PlayerInteract.CurrentHealth = 100.0f;
         PlayerInteract.IsBurned = false;
+        PlayerInteract.Goal = false;
         PlayerFSM.IsDead = false;
         Player.transform.position = SpawnPoint.transform.position;
+        ClearMsg.SetActive(false);
         GameOverMsg.SetActive(false);
     }
 

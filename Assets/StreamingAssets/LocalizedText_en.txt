@@ -1,20 +1,108 @@
 ﻿{
   "items": [
     {
-      "key": "StartGame",
+      "key": "Start",
       "value": "Start"
     },
     {
-      "key": "CheckRecord",
-      "value": "Records"
+      "key": "Developer",
+      "value": "Developer"
     },
     {
-      "key": "SetOption",
+      "key": "Settings",
       "value": "Settings"
     },
     {
-      "key": "QuitGame",
+      "key": "Quit",
       "value": "Quit"
+    },
+    {
+      "key": "Back",
+      "value": "Back"
+    },
+    {
+      "key": "Audio",
+      "value": "Audio"
+    },
+    {
+      "key": "BGM",
+      "value": "BGM"
+    },
+    {
+      "key": "SE",
+      "value": "SE"
+    },
+    {
+      "key": "Video",
+      "value": "Video"
+    },
+    {
+      "key": "Resolutions",
+      "value": "Resolutions"
+    },
+    {
+      "key": "FullScreen",
+      "value": "Full Screen"
+    },
+    {
+      "key": "Language",
+      "value": "Language"
+    },
+    {
+      "key": "QuitMessage",
+      "value": "Do you really want to quit the game?"
+    },
+    {
+      "key": "Stages",
+      "value": "Stages"
+    },
+    {
+      "key": "Forest",
+      "value": "Forest"
+    },
+    {
+      "key": "Desert",
+      "value": "Desert"
+    },
+    {
+      "key": "Move",
+      "value": "Move"
+    },
+    {
+      "key": "Parachute",
+      "value": "Parachute"
+    },
+    {
+      "key": "Jump",
+      "value": "Jump"
+    },
+    {
+      "key": "Record",
+      "value": "Record"
+    },
+    {
+      "key": "Menu",
+      "value": "Menu"
+    },
+    {
+      "key": "Continue",
+      "value": "Continue"
+    },
+    {
+      "key": "Retry",
+      "value": "Retry"
+    },
+    {
+      "key": "MainMenu",
+      "value": "Go To Main Menu"
+    },
+    {
+      "key": "RetryMessage",
+      "value": "Retry?"
+    },
+    {
+      "key": "CongratsMessage",
+      "value": "Congratulations!"
     }
   ]
 }

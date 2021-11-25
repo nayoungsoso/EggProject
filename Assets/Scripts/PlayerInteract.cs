@@ -12,7 +12,7 @@ public class PlayerInteract : MonoBehaviour
     public static bool Goal = false; // 목표 도달 여부를 확인할 변수
     float damageDelay = 2.5f; // 공격받은 후에 무적을 유지할 시간
     float Web_Elasticity = 20.0f; // 거미줄의 탄성
-    float Spike_Damage = 5.0f; // 가시가 줄 데미지
+    float Spike_Damage = 10.0f; // 가시가 줄 데미지
     float Spike_Flinch = 8.0f; // 가시에서 튕겨져나오는 힘
     float Tornado_Power = 100.0f; // 토네이도의 위로 띄우는 힘
     float Fire_SuddenDeath = 0.0f; // 불 오브젝트에 접촉해 있는 시간
@@ -20,16 +20,32 @@ public class PlayerInteract : MonoBehaviour
     Rigidbody2D rigid; // 캐릭터의 Rigidbody2D
     Animator anim; // 캐릭터의 Animator
     SpriteRenderer sprite; // 캐릭터의 SpriteRenderer
+    public AudioSource audioSource; // 캐릭터의 AudioSource
+    public AudioClip damageClip; // 충돌 효과음 클립
+    public AudioClip webClip; // 거미줄 효과음 클립
+    public AudioClip waterClip; // 물 효과음 클립
+    public GameManager gameManager; // 게임 매니저
 
     void Start()
     {
+        // 게임 매니저 연결
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+
+        anim.runtimeAnimatorController = gameManager.animator.runtimeAnimatorController;
     }
 
     void Update()
     {
+        // 게임 매니저 연결
+        if (gameManager == null)
+        {
+            gameManager = GameObject.Find("GamaManager").GetComponent<GameManager>();
+        }
+
         // 애니메이터의 매개변수 'Health'에 캐릭터의 현재 체력 전달
         anim.SetFloat("Health", CurrentHealth);
 
@@ -44,9 +60,6 @@ public class PlayerInteract : MonoBehaviour
     { // 오브젝트와 접촉을 시작할 때 (1회성 오브젝트 활성화)
         if (!PlayerFSM.IsDead && !Goal)
         { // 캐릭터 사망 or 목표 도착시 접촉 검사 X
-            // 접촉한 오브젝트가 거미줄일 때
-            if (collision.tag == "Web")
-                OnWeb(collision);
             // 접촉한 오브젝트가 불 또는 용암일 때
             if ((collision.tag == "Fire") || (collision.tag == "Lava"))
             {
@@ -64,15 +77,15 @@ public class PlayerInteract : MonoBehaviour
             if (collision.tag == "DeathZone")
                 CurrentHealth = 0.0f; // 즉사
         }
+        // 접촉중인 오브젝트가 물 또는 용암일 때
+        if (collision.tag == "Water" || collision.tag == "Lava")
+            audioSource.PlayOneShot(waterClip);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     { // 오브젝트와 접촉중일 때 (지속형 오브젝트 활성화)
         if (!PlayerFSM.IsDead && !Goal)
         { // 캐릭터 사망 or 목표 도착시 접촉 검사 X
-            // 접촉중인 오브젝트가 가시일 때
-            if (collision.tag == "Spike")
-                OnSpike(collision);
             // 접촉중인 오브젝트가 토네이도일 때
             if (collision.tag == "Tornado")
                 OnTornado();
@@ -106,8 +119,19 @@ public class PlayerInteract : MonoBehaviour
             if (crashPower > 50.0f) // 캐릭터와 지형이 50.0 이상의 속도로 충돌했을 경우
             {
                 // Debug.Log(crashPower);
-                // 충돌속도(50 ~ 100)의 10분의 1 데미지(5 ~ 10)
-                StartCoroutine(Damaged(crashPower / 10.0f, 0.0f, collision.collider));
+                // 충돌속도(50 ~ 100)의 5분의 1 데미지(10 ~ 20)
+                StartCoroutine(Damaged(crashPower / 5.0f, 0.0f, collision.collider));
+            }
+            // 접촉한 오브젝트가 거미줄일 때
+            if (collision.gameObject.tag == "Web")
+            {
+                OnWeb(collision.collider);
+                audioSource.PlayOneShot(webClip);
+            }
+            // 접촉중인 오브젝트가 가시일 때
+            if (collision.gameObject.tag == "Spike")
+            {
+                OnSpike(collision.collider);
             }
         }
     }
@@ -161,6 +185,7 @@ public class PlayerInteract : MonoBehaviour
         Vector2 BounceTo = transform.position - col.transform.position;
         rigid.AddForce(new Vector2(BounceTo.x, 1.0f) * bounce, ForceMode2D.Impulse);
         sprite.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+        audioSource.PlayOneShot(damageClip);
         yield return new WaitForSeconds(damageDelay);
         sprite.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         IsDamaged = false;

@@ -23,10 +23,15 @@ public class PlayerFSM : MonoBehaviour
     float ParaGlide = 24.0f; // 낙하산에 적용할 낙하산의 힘
     float ParaWind = 64.0f; // 낙하산에 적용할 바람의 힘
     float ParaTime = 0.0f; // 낙하산이 바람을 받기까지 걸리는 시간을 저장할 타이머
-    public static bool IsGrounded = true; // 캐릭터의 지면과의 접촉 상태
+    public static bool CollLanded = true; // 캐릭터의 지면과의 접촉 상태 (콜라이터)
+    public static bool IsLanded = true; // 캐릭터의 지면과의 접촉 상태 (콜라이더 + 레이캐스트)
     public static bool Parachute = false; // 캐릭터의 낙하산 상태
     public static bool IsDead = false; // 캐릭터의 사망 상태
-    public static Rigidbody2D rigid;
+    public Rigidbody2D rigid; // 캐릭터의 Rigidbody2D
+    public AudioSource audioSource; // 캐릭터의 AudioSource
+    public AudioClip jumpClip; // 점프 효과음 클립
+    public AudioClip paraClip; // 낙하산 효과음 클립
+    public AudioClip deathClip; // 사망 효과음 클립
 
     private void Start()
     {
@@ -59,17 +64,17 @@ public class PlayerFSM : MonoBehaviour
         else if (rigid.velocity.y < -MaxSpeed)
             rigid.velocity = new Vector2(rigid.velocity.x, -MaxSpeed);
 
-        // 캐릭터의 지면과의 접촉 상태를 체크
-        // Debug.DrawRay(transform.position, Vector3.down * 1.0f, Color.green);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.0f,LayerMask.GetMask("Ground"));
-        if (hit.collider != null)
+        // 캐릭터의 지면과의 접촉 상태를 체크 (캐릭터의 콜라이더와 레이를 동시에 감지하여 부드럽게 작동)
+        Debug.DrawRay(transform.position, Vector3.down * 1.25f, Color.green);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.25f,LayerMask.GetMask("Ground"));
+        if (hit.collider != null || CollLanded)
         {
-            IsGrounded = true;
+            IsLanded = true;
             // Debug.Log("IsGrounded = true");
         }
         else
         {
-            IsGrounded = false;
+            IsLanded = false;
             // Debug.Log("IsGrounded = false");
         }
     }
@@ -105,10 +110,11 @@ public class PlayerFSM : MonoBehaviour
             // Debug.Log(JumpPower);
             rigid.AddForce(Target.normalized * JumpCharge, ForceMode2D.Impulse);
             JumpCharge = 0.0f;
+            audioSource.PlayOneShot(jumpClip);
         }
 
         // Earth Escape Trigger (탈출 조건 정의)
-        if (!IsGrounded)
+        if (!IsLanded)
         {
             JumpCharge = 0.0f;
             state = State.Sky;
@@ -116,6 +122,7 @@ public class PlayerFSM : MonoBehaviour
         if (PlayerInteract.CurrentHealth <= 0)
         {
             JumpCharge = 0.0f;
+            audioSource.PlayOneShot(deathClip);
             state = State.Die;
             IsDead = true;
         }
@@ -126,12 +133,16 @@ public class PlayerFSM : MonoBehaviour
     {
         // Sky (상태 정의)
         // Sky Escape Trigger (탈출 조건 정의)
-        if (IsGrounded)
+        if (IsLanded)
             state = State.Earth;
         if (Input.GetKeyDown(KeyCode.X))
+        {
+            audioSource.PlayOneShot(paraClip);
             state = State.Para;
+        }
         if (PlayerInteract.CurrentHealth <= 0)
         {
+            audioSource.PlayOneShot(deathClip);
             state = State.Die;
             IsDead = true;
         }
@@ -150,7 +161,7 @@ public class PlayerFSM : MonoBehaviour
             rigid.AddForce(new Vector2(0.0f, ParaWind));
 
         // Para Escape Trigger (탈출 조건 정의)
-        if (IsGrounded)
+        if (IsLanded)
         {
             Parachute = false;
             ParaTime = 0.0f;
@@ -166,6 +177,7 @@ public class PlayerFSM : MonoBehaviour
         {
             Parachute = false;
             ParaTime = 0.0f;
+            audioSource.PlayOneShot(deathClip);
             state = State.Die;
             IsDead = true;
         }
@@ -180,4 +192,16 @@ public class PlayerFSM : MonoBehaviour
             state = State.Earth;
     }
     // } 상태 정의
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        CollLanded = true;
+        // Debug.Log("IsColl = true");
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        CollLanded = false;
+        // Debug.Log("IsColl = false");
+    }
 }

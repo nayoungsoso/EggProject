@@ -1,20 +1,108 @@
 {
   "items": [
     {
-      "key": "StartGame",
-      "value": "游戏开始"
+      "key": "Start",
+      "value": "开始游戏"
     },
     {
-      "key": "CheckRecord",
-      "value": "记录确认"
+      "key": "Developer",
+      "value": "开发商"
     },
     {
-      "key": "SetOption",
-      "value": "配置环境"
+      "key": "Settings",
+      "value": "选项"
     },
     {
-      "key": "QuitGame",
-      "value": "游戏结束"
+      "key": "Quit",
+      "value": "退出游戏"
+    },
+    {
+      "key": "Back",
+      "value": "背部"
+    },
+    {
+      "key": "Audio",
+      "value": "声音"
+    },
+    {
+      "key": "BGM",
+      "value": "背景音乐"
+    },
+    {
+      "key": "SE",
+      "value": "声音特效"
+    },
+    {
+      "key": "Video",
+      "value": "视频"
+    },
+    {
+      "key": "Resolutions",
+      "value": "解析度"
+    },
+    {
+      "key": "FullScreen",
+      "value": "全屏"
+    },
+    {
+      "key": "Language",
+      "value": "语言选择"
+    },
+    {
+      "key": "QuitMessage",
+      "value": "您确定要退出游戏吗?"
+    },
+    {
+      "key": "Stages",
+      "value": "阶段"
+    },
+    {
+      "key": "Forest",
+      "value": "森林(Forest)"
+    },
+    {
+      "key": "Desert",
+      "value": "沙漠(Desert)"
+    },
+    {
+      "key": "Move",
+      "value": "移动"
+    },
+    {
+      "key": "Parachute",
+      "value": "降落伞"
+    },
+    {
+      "key": "Jump",
+      "value": "跳"
+    },
+    {
+      "key": "Record",
+      "value": "记录"
+    },
+    {
+      "key": "Menu",
+      "value": "菜单"
+    },
+    {
+      "key": "Continue",
+      "value": "继续"
+    },
+    {
+      "key": "Retry",
+      "value": "重做"
+    },
+    {
+      "key": "MainMenu",
+      "value": "主菜单"
+    },
+    {
+      "key": "RetryMessage",
+      "value": "你愿意再做一次吗?"
+    },
+    {
+      "key": "CongratsMessage",
+      "value": "恭喜!"
     }
   ]
 }

@@ -22,6 +22,8 @@ public class LocalizationManager : MonoBehaviour
         }
 
         // DontDestroyOnLoad(gameObject);
+
+        // LoadLocalizedText("LocalizedText_en");
     }
 
     public void LoadLocalizedText(string fileName)
@@ -41,7 +43,7 @@ public class LocalizationManager : MonoBehaviour
             }
 
             // load LocalizedText
-            Debug.Log("Data loaded. Dictionary containts :" + localizedText.Count + " entries");
+            // Debug.Log("Data loaded. Dictionary containts :" + localizedText.Count + " entries");
         }
         else
         {
