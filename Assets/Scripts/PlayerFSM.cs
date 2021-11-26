@@ -22,7 +22,7 @@ public class PlayerFSM : MonoBehaviour
     float JumpCharge = 0.0f; // 캐릭터의 점프를 위해 힘을 충전한 시간
     float ParaGlide = 24.0f; // 낙하산에 적용할 낙하산의 힘
     float ParaWind = 64.0f; // 낙하산에 적용할 바람의 힘
-    float ParaTime = 0.0f; // 낙하산이 바람을 받기까지 걸리는 시간을 저장할 타이머
+    float ParaTime = 5.0f; // 낙하산이 바람을 받기까지 걸리는 시간을 저장할 타이머
     public static bool CollLanded = true; // 캐릭터의 지면과의 접촉 상태 (콜라이터)
     public static bool IsLanded = true; // 캐릭터의 지면과의 접촉 상태 (콜라이더 + 레이캐스트)
     public static bool Parachute = false; // 캐릭터의 낙하산 상태
