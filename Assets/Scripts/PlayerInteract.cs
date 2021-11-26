@@ -16,7 +16,7 @@ public class PlayerInteract : MonoBehaviour
     float Spike_Flinch = 8.0f; // 가시에서 튕겨져나오는 힘
     float Tornado_Power = 100.0f; // 토네이도의 위로 띄우는 힘
     float Fire_SuddenDeath = 0.0f; // 불 오브젝트에 접촉해 있는 시간
-    float Water_Buoyancy = 30.0f; // 물의 부력
+    float Water_Buoyancy = 40.0f; // 물의 부력
     Rigidbody2D rigid; // 캐릭터의 Rigidbody2D
     Animator anim; // 캐릭터의 Animator
     SpriteRenderer sprite; // 캐릭터의 SpriteRenderer

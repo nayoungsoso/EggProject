@@ -66,7 +66,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.6
+  m_Mass: 1
   m_LinearDrag: 0.6
   m_AngularDrag: 0.6
   m_GravityScale: 6
@@ -275,6 +275,7 @@ MonoBehaviour:
   damageClip: {fileID: 8300000, guid: 1dd768cf91ba5cf4892a7af632716980, type: 3}
   webClip: {fileID: 8300000, guid: f2652b9795e8f3c488fb8bb65f65310a, type: 3}
   waterClip: {fileID: 8300000, guid: 64eabc0349ac5a441a1614eae59e2895, type: 3}
+  gameManager: {fileID: 0}
 --- !u!114 &3065909847142874553
 MonoBehaviour:
   m_ObjectHideFlags: 0
