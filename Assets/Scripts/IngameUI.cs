@@ -51,7 +51,7 @@ public class IngameUI : MonoBehaviour
         PlayerInteract.IsBurned = false;
         PlayerInteract.Goal = false;
         PlayerFSM.IsDead = false;
-        Player.transform.position = SpawnPoint.transform.position;
+        // Player.transform.position = SpawnPoint.transform.position;
         ClearMsg.SetActive(false);
         GameOverMsg.SetActive(false);
     }
